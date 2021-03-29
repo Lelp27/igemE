@@ -1,0 +1,85 @@
+---
+title: "iGEM2021"
+date: "2021-03-29"
+output: 
+  html_document:
+  pdf_document:
+    latex_engine: xelatex
+mainfont : NanumGothic
+---
+```{r, echo = FALSE}
+no <- c(1:4)
+team_name <- c("UofUppsala", "TAS_taipei", "UC Davis", "UNILausanne")
+project_title <- c("NanoFlex",
+                   "Virus Detection",
+                   "SPORE_CORE",
+                   "Bacterial Oscillation Therapy")
+project_year <- c(2020,2020,2020,2020)
+wiki_page <- c("https://2020.igem.org/Team:UofUppsala",
+              "https://2020.igem.org/Team:TAS_Taipei/Team",
+              "https://2020.igem.org/Team:UC_Davis/Design-computational",
+              "https://2020.igem.org/Team:UNILausanne/Description")
+igem_team <- data.frame(no, 
+                        team_name, 
+                        project_title, 
+                        project_year, 
+                        wiki_page)
+knitr::kable(igem_team)
+```
+
+
+```{r, echo = FALSE}
+no <- c(1:20)
+
+no_2 <- c(1:10)
+part_id <- c(paste('BBa_K342500', 1:9, sep=''),
+             paste('BBa_K34250', 10:16, sep=''),
+             paste('BBa_K34250', 17:20, sep='')
+)
+
+part_id_2 <- c(paste('BBa_K335200', 0:9, sep='')
+               )
+
+
+             
+part_name <- c(paste('pSB3C', 11:14, sep=''),
+               paste('pSB3K0', 1:4,sep=''),
+               paste('pSB4K0', 1:4,sep=''),
+               paste('pSB4A0', 1:4,sep=''),
+               paste("Type IIS standard", c("Promoter", "RBS", "CDS", "terminator"), "template")
+)
+
+part_name_2 <- c('His-Tag / GS linker / SplintR Ligase',
+               'His-Tag / GS linker / Φ29 DNA polymerase',
+               'Extended RBS',
+               'T7 terminator',
+               'Strong Promoter / Strong RBS / BBa_K3352000 / Double Terminator',
+               'Strong Promoter / Strong RBS / BBa_K3352001 / Double Terminator',
+               'T7 Promoter / Strong RBS / BBa_K3352000 / Double Terminator',
+               'T7 Promoter / Strong RBS / BBa_K3352001 / Double Terminator',
+               'pET 3a T7 Promoter UTR / Extended RBS / BBa_K3352000 / T7 Terminator',
+               'pET 11a Promoter UTR / Extended RBS / BBa_K3352001 / T7 Terminator'
+)
+
+
+part_type <- c(rep('Vector', 16),
+               rep('template',4)
+               )
+
+part_type_2 <- c(rep('None', 10))
+
+
+team_id <- c(rep(1,20))
+
+team_id_2 <- c(rep(2,10))
+
+igem_part <- data.frame(c(no, no_2),
+                        c(part_id, part_id_2),
+                        c(part_name, part_name_2),
+                        c(part_type, part_type_2),
+                        c(team_id, team_id_2)
+)
+
+knitr::kable(igem_part)
+
+```

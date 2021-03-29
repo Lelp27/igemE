@@ -24,7 +24,7 @@ igem_team <- data.frame(no,
                         project_title, 
                         project_year, 
                         wiki_page)
-knitr::kable(igem_team)
+knitr::kable(igem_team, col.names=c("No", "Team_name", "Project", "Year", "Wiki"))
 ```
 
 
@@ -80,6 +80,6 @@ igem_part <- data.frame(c(no, no_2),
                         c(team_id, team_id_2)
 )
 
-knitr::kable(igem_part)
+knitr::kable(igem_part, col.names=c("No", "ID", "Name", "Type", "Team"))
 
 ```

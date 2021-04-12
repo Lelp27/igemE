@@ -39,7 +39,7 @@ user <- rep("Lelp27", length(id))
 device_id <- rep("BBa_K2016000", length(id))
 
 igem_part <- data.table(id, BBid, type, backborn, link, device_id, team_name)
-igem_part
+#igem_part
 ```
 
 ``` {r, echo=FALSE}
@@ -52,21 +52,27 @@ valunit <- rep("Fluorescence", length(id))
 promoter <- c("BBa_J23106", "BBa_J23100", "BBa_J23106", "BBa_J23100")
 incubhr <- c <- (rep("16-18h", length(id)))
 incubtemp <- c(rep("37",length(id)))
-device_id <- rep("BBa_K2016000", length(id))
+  device_id <- rep("BBa_K2016000", length(id))
 link <- c(rep("http://2016.igem.org/Team:Sheffield/project/science",4))
 
 igem_obs <- data.table(id, strain, promoter, indc, conc, value, valunit, incubhr, incubtemp, device_id, link)
 
-igem_obs
+DT::datatable(igem_obs)
+```
+``` {r, echo=FALSE, include=FALSE}
+library(tidyverse)
+library(shiny)
+library(DT)
 ```
 
+
 ``` {r, echo=FALSE}
-library(tidyverse)
-rm(igem_promoter)
+
 igem_promoter <- igem_part %>%
   left_join(igem_team, by="team_name") %>%
   left_join(igem_obs, by="device_id")
-igem_promoter
+
+DT::datatable(igem_promoter)
 ```
 
 ``` {r, echo=FALSE}

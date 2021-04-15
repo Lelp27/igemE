@@ -57,7 +57,7 @@ link <- c(rep("http://2016.igem.org/Team:Sheffield/project/science",4))
 
 igem_obs <- data.table(id, strain, promoter, indc, conc, value, valunit, incubhr, incubtemp, device_id, link)
 
-DT::datatable(igem_obs)
+knitr::kable(igem_obs)
 ```
 ``` {r, echo=FALSE, include=FALSE}
 library(tidyverse)
@@ -72,7 +72,7 @@ igem_promoter <- igem_part %>%
   left_join(igem_team, by="team_name") %>%
   left_join(igem_obs, by="device_id")
 
-DT::datatable(igem_promoter)
+knitr::kable(igem_promoter)
 ```
 
 ``` {r, echo=FALSE}

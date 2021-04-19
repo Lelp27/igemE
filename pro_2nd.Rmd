@@ -1,0 +1,43 @@
+---
+title: "promoter_3nd"
+date: "2021-04-12"
+output: 
+  html_document:
+  pdf_document:
+    latex_engine: xelatex
+mainfont : NanumGothic
+---
+
+# BBa_R0011
+## Experience
+
+``` {r, echo=TRUE, message=FALSE}
+library(readxl)
+library(tidyverse)
+```
+
+``` {r, echo=FALSE, message=FALSE}
+igem_team <- read_excel("promoter_3nd.xlsx", sheet="team", skip=0, col_names=T)
+igem_part <- read_excel("promoter_3nd.xlsx", sheet="part", skip=0, col_names=T)
+igem_obs <- read_excel("promoter_3nd.xlsx", sheet="obs", skip=0, col_names=T)
+
+igem_promoter <- igem_part %>%
+  left_join(igem_team, by="team_name") %>%
+  left_join(igem_obs, by="device_id")
+
+igem_part
+knitr::kable(igem_promoter)
+```
+
+``` {r, echo=FALSE}
+plot_data <- igem_promoter %>% 
+  filter(Bbid=="BBa_R0011") %>% 
+  select(type, strain, conc, value) %>% 
+  mutate(strain=factor(strain), conc=factor(conc))
+
+
+ggplot(plot_data, aes(x=type, y=value, fill=conc)) +
+  geom_bar(stat="identity", position=position_dodge(width=0.5), width=0.4) +
+  scale_fill_manual(values=c("#ce1212", "#4a47a3")) +
+  theme_bw()
+```

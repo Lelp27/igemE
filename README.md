@@ -8,4 +8,4 @@
 <br>
 [BBa_J23100](https://lelp27.github.io/igemE/igem_BBa_J23100)
 <br>
-[Promoter_3nd](pro_2nd.html)
+[Promoter_3nd](https://lelp27.github.io/igemE/pro_2nd)

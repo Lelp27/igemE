@@ -36,8 +36,10 @@ plot_data <- igem_promoter %>%
   mutate(strain=factor(strain), conc=factor(conc))
 
 
+plot_data
+
 ggplot(plot_data, aes(x=type, y=value, fill=conc)) +
   geom_bar(stat="identity", position=position_dodge(width=0.5), width=0.4) +
-  scale_fill_manual(values=c("#ce1212", "#4a47a3")) +
+  #scale_fill_manual(values=c("#ce1212", "#4a47a3")) +
   theme_bw()
 ```

@@ -1,6 +1,6 @@
-# Test
+# ResearchE2021
 
-### TEst22
+### iGEM Part Data
 
 `This is README markdown file`
 
@@ -8,3 +8,4 @@
 <br>
 [BBa_J23100](https://lelp27.github.io/igemE/igem_BBa_J23100)
 <br>
+[Promoter_3nd](pro_2nd.html)

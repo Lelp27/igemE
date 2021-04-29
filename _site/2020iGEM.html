@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+<meta name="date" content="2021-03-18" />
+
+<title>iGEM2021</title>
+
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">My Website</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li class="dropdown-header">TEST</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">iGEM2021</h1>
+<h4 class="date">2021-03-18</h4>
+
+</div>
+
+
+<div id="team-uofuppsala" class="section level1">
+<h1>Team: UofUppsala</h1>
+<div id="subject-nanoflex" class="section level2">
+<h2>Subject : NanoFlex</h2>
+<ul>
+<li>Description <code>Biosensor의 Regulator를 Antiboy Variable region으로 대체하여 외부 물질을 감지한 후 Cell내부 Epitope를 외부로 표지하여 결합 후 Marker를 발현 하게함</code></li>
+<li>Wiki : <a href="https://2020.igem.org/Team:UofUppsala/">Team:UofUppsala</a></li>
+<li>Tag : <code>Biosensor</code></li>
+<li>Part : <a href="https://2020.igem.org/Team:UofUppsala/Parts">UofUppsala:Parts</a></li>
+</ul>
+<p>df2 = data.frame(df, ncol = 2) df2 paste(‘BBa_K34250’, 01:12) paste(‘BBa_K34250’, 01:12, sep=’‘) paste(’BBa_K342500’, 01:12, sep=’‘) paste(’BBa_K342500’, 1:9, sep=’‘) paste(’BBa_K342500’, 1:9, sep=’‘) + BBa_K3425010 paste(’BBa_K342500’, 1:9, sep=’‘) 1:16 sprintf(“%05d”,1:16) sprintf(“BBa_K3425%02d”,1:16) sprintf(“BBa_K34250%02d”,1:16) backborns = sprintf(“BBa_K34250%02d”,1:16) names &lt;- paste(’pSB3C’, 11:14, sep=’‘) names names &lt;- c(paste(’pSB3C’, 11:14, sep=’‘),(paste(’pSB3K0’,1:4,sep=’‘)) names names &lt;- c(paste(’pSB3C’, 11:14, sep=’‘),(paste(’pSB3K0’,1:4,sep=’‘)) names &lt;- c(paste(’pSB3C’, 11:14, sep=’‘),(paste(’pSB3K0’,1:4,sep=’‘)) names &lt;- paste(’pSB3C’, 11:14, sep=’‘) names paste(’pSB3K0’,1:4,sep) paste(‘pSB3K0’, 1:4,sep=’‘) names &lt;- c(paste(’pSB3C’, 11:14, sep=’‘), paste(’pSB3K0’, 1:4,sep=’‘), paste(’pSB4K0’, 1:4,sep=’‘), paste(’pSB4A0’, 1:4,sep=’‘), ) names &lt;- c(paste(’pSB3C’, 11:14, sep=’‘), paste(’pSB3K0’, 1:4,sep=’‘), paste(’pSB4K0’, 1:4,sep=’‘), paste(’pSB4A0’, 1:4,sep=’‘), ) names &lt;- c(paste(’pSB3C’, 11:14, sep=’‘), paste(’pSB3K0’, 1:4,sep=’‘), paste(’pSB4K0’, 1:4,sep=’‘), paste(’pSB4A0’, 1:4,sep=’‘) ) names kable(c(backborns, names)) library(knitr) kable(c(backborns, names)) data.frame(c(backborns, names)) data.frame(backborns, names) kable(backborns, names) data.frame(backborns, names) df &lt;- data.frame(backborns, names) kable(df) knitr::kable(df, “pipe”) knitr::kable(df, “simple”) ?kable t_names &lt;- paste(’Type IIS standard’, c(‘Promoter, RBS, CDS, terminator), ’template’ ) t_names &lt;- paste(‘Type IIS standard’, c(‘Promoter, RBS, CDS, terminator)) t_names t_names t_names &lt;- paste(’Type IIS standard’, c(‘Promoter, RBS, CDS, terminator)) t_names &lt;- paste(’Type IIS standard’, c(‘Promoter, RBS, CDS, terminator)) t_names paste(’A’,1:5) paste(“A”,1:5) t_names &lt;- paste(“Type IIS standard”, c(“Promoter”, “RBS”, “CDS”, “terminator”)) t_names &lt;- paste(“Type IIS standard”, c(“Promoter”, “RBS”, “CDS”, “terminator”), “template”) t_names df_t &lt;- data.frame(templates, t_names) Parts &lt;- paste(‘BBa_K335200’,0:9,seq=’‘) df_P &lt;- data.frame(Parts,names) df &lt;- data.frame(Parts, names, tag, description, len) Parts &lt;- c(’BBa_K3669003’,‘BBa_K3669004’,‘BBa_K3669005’,‘BBa_K3669006’,‘BBa_K3669007’,‘BBa_K3669008’,‘BBa_K3669009’,‘BBa_K3669010’,‘BBa_K3669011’,‘BBa_K3669012’,‘BBa_K3669013’,‘BBa_K3669014’) names &lt;- c(‘gpdA3B box’,‘amdS selectable marker’,‘Pcox4 promoter’,‘Pmin minimal gpdA promoter’,‘TcgrA Terminator’,‘tetO7 binding site operator’,‘ToxA Promoter’,‘TtrpC Terminator’,‘trpC Promoter’,‘sGFP’,‘Nos Terminator’,‘HygR selectable marker’) tag &lt;- c(‘Regulatory’,‘CDS’,‘Regulatory’,‘Regulatory’,‘Terminator’,‘Regulatory’,‘Regulatory’,‘Terminator’,‘Regulatory’,‘Reporter’,‘Terminator’,‘CDS’) description &lt;- c(‘gpdA3B contains three copies of the gpdA box, which was discovered that when removed transcription was significantly decreased. Therefore there is strong evidence that it is the minimal promoter. Three copies of the gpdA box gave the highest levels of transcription, much higher than the original single copy.’,‘amdS is a dominant selective gene marker. Gene allows organism to use acetamide as a carbon/nitrogen source for resource acquisition. Can be used in conjunction with acetamide selective media.’,‘Pcox4 constitutive promoter is comparable to gpdA in strength, good option for high expression.’,‘This DNA sequence encodes the 175 bp minimal gpdA promoter from Aspergillus nidulans.’,‘Terminator on plasmid p502. Can be used as a terminator gene in Aspergillus.’,‘Seven copies of tetO with spacers in between. Binds tTA to induce expression of some promoter. Used as a binding site of tTA regulated by the amount of doxycycline in the system.’,‘ToxA is a strong constitutive promoter, used to drive expression of a reporter gene.’,‘Transcription terminator used to stop selective gene markers.’,‘trpC promoter used to drive selectable marker gene resistance.’,‘Variant of GFP, where a serine at position 65 is replaced with threonine. sGFP is a stronger reporter gene than normal GFP in filamentous fungi leading to greater fluorescence.’,‘Nos Terminator used to stop transcription of reporter gene sGFP.’,‘Confers resistance to the antibiotic hygromycin. Used for selectable markers in selectable media.’,‘For selecting plasmids, one can use this gene in the presence of hygromycin.’) len &lt;- c(‘171bp’,‘1647bp’,‘1500bp’,‘175bp’,‘278bp’,‘271bp’,‘265bp’,‘763bp’,‘351bp’,‘720bp’,‘253bp’,‘1026bp’) df &lt;- data.frame(Parts, names, tag, description, len) Parts &lt;- c(‘BBa_K3669003’,‘BBa_K3669004’,‘BBa_K3669005’,‘BBa_K3669006’,‘BBa_K3669007’,‘BBa_K3669008’,‘BBa_K3669009’,‘BBa_K3669010’,‘BBa_K3669011’,‘BBa_K3669012’,‘BBa_K3669013’,‘BBa_K3669014’) names &lt;- c(‘gpdA3B box’,‘amdS selectable marker’,‘Pcox4 promoter’,‘Pmin minimal gpdA promoter’,‘TcgrA Terminator’,‘tetO7 binding site operator’,‘ToxA Promoter’,‘TtrpC Terminator’,‘trpC Promoter’,‘sGFP’,‘Nos Terminator’,‘HygR selectable marker’) tag &lt;- c(‘Regulatory’,‘CDS’,‘Regulatory’,‘Regulatory’,‘Terminator’,‘Regulatory’,‘Regulatory’,‘Terminator’,‘Regulatory’,‘Reporter’,‘Terminator’,‘CDS’) description &lt;- c(‘gpdA3B contains three copies of the gpdA box, which was discovered that when removed transcription was significantly decreased. Therefore there is strong evidence that it is the minimal promoter. Three copies of the gpdA box gave the highest levels of transcription, much higher than the original single copy.’,‘amdS is a dominant selective gene marker. Gene allows organism to use acetamide as a carbon/nitrogen source for resource acquisition. Can be used in conjunction with acetamide selective media.’,‘Pcox4 constitutive promoter is comparable to gpdA in strength, good option for high expression.’,‘This DNA sequence encodes the 175 bp minimal gpdA promoter from Aspergillus nidulans.’,‘Terminator on plasmid p502. Can be used as a terminator gene in Aspergillus.’,‘Seven copies of tetO with spacers in between. Binds tTA to induce expression of some promoter. Used as a binding site of tTA regulated by the amount of doxycycline in the system.’,‘ToxA is a strong constitutive promoter, used to drive expression of a reporter gene.’,‘Transcription terminator used to stop selective gene markers.’,‘trpC promoter used to drive selectable marker gene resistance.’,‘Variant of GFP, where a serine at position 65 is replaced with threonine. sGFP is a stronger reporter gene than normal GFP in filamentous fungi leading to greater fluorescence.’,‘Nos Terminator used to stop transcription of reporter gene sGFP.’,‘Confers resistance to the antibiotic hygromycin. Used for selectable markers in selectable media.’,‘For selecting plasmids, one can use this gene in the presence of hygromycin.’) len &lt;- c(‘171bp’,‘1647bp’,‘1500bp’,‘175bp’,‘278bp’,‘271bp’,‘265bp’,‘763bp’,‘351bp’,‘720bp’,‘253bp’,‘1026bp’) df &lt;- data.frame(Parts, names, tag, description, len) len(Parts) length(Parts) length(names) length(tag) length(len) length(description) print (description) Parts &lt;- c(‘BBa_K3669003’,‘BBa_K3669004’,‘BBa_K3669005’,‘BBa_K3669006’,‘BBa_K3669007’,‘BBa_K3669008’,‘BBa_K3669009’,‘BBa_K3669010’,‘BBa_K3669011’,‘BBa_K3669012’,‘BBa_K3669013’,‘BBa_K3669014’) names &lt;- c(‘gpdA3B box’,‘amdS selectable marker’,‘Pcox4 promoter’,‘Pmin minimal gpdA promoter’,‘TcgrA Terminator’,‘tetO7 binding site operator’,‘ToxA Promoter’,‘TtrpC Terminator’,‘trpC Promoter’,‘sGFP’,‘Nos Terminator’,‘HygR selectable marker’) tag &lt;- c(‘Regulatory’,‘CDS’,‘Regulatory’,‘Regulatory’,‘Terminator’,‘Regulatory’,‘Regulatory’,‘Terminator’,‘Regulatory’,‘Reporter’,‘Terminator’,‘CDS’) description &lt;- c(‘gpdA3B contains three copies of the gpdA box, which was discovered that when removed transcription was significantly decreased. Therefore there is strong evidence that it is the minimal promoter. Three copies of the gpdA box gave the highest levels of transcription, much higher than the original single copy.’,‘amdS is a dominant selective gene marker. Gene allows organism to use acetamide as a carbon/nitrogen source for resource acquisition. Can be used in conjunction with acetamide selective media.’,‘Pcox4 constitutive promoter is comparable to gpdA in strength, good option for high expression.’,‘This DNA sequence encodes the 175 bp minimal gpdA promoter from Aspergillus nidulans.’,‘Terminator on plasmid p502. Can be used as a terminator gene in Aspergillus.’,‘Seven copies of tetO with spacers in between. Binds tTA to induce expression of some promoter. Used as a binding site of tTA regulated by the amount of doxycycline in the system.’,‘ToxA is a strong constitutive promoter, used to drive expression of a reporter gene.’,‘Transcription terminator used to stop selective gene markers.’,‘trpC promoter used to drive selectable marker gene resistance.’,‘Variant of GFP, where a serine at position 65 is replaced with threonine. sGFP is a stronger reporter gene than normal GFP in filamentous fungi leading to greater fluorescence.’,‘Nos Terminator used to stop transcription of reporter gene sGFP.’,‘Confers resistance to the antibiotic hygromycin. Used for selectable markers in selectable media. For selecting plasmids, one can use this gene in the presence of hygromycin.’) len &lt;- c(‘171bp’,‘1647bp’,‘1500bp’,‘175bp’,‘278bp’,‘271bp’,‘265bp’,‘763bp’,‘351bp’,‘720bp’,‘253bp’,‘1026bp’) df &lt;- data.frame(Parts, names, tag, description, len) knitr::kable(df_P, “simple”, caption = “Part List”) df &lt;- data.frame(Parts, names, tag, description, len) knitr::kable(df, “simple”, caption = “Part List”) library(knitr) backborns &lt;- sprintf(“BBa_K34250%02d”,1:16) v_names &lt;- c(paste(‘pSB3C’, 11:14, sep=’‘), paste(’pSB3K0’, 1:4,sep=’‘), paste(’pSB4K0’, 1:4,sep=’‘), paste(’pSB4A0’, 1:4,sep=’‘) ) df_v &lt;- data.frame(backborns, v_names) knitr::kable(df_v, “simple”, caption = ’Vector’) templates &lt;- paste(‘BBa_K34250’,17:20, sep=’‘) t_names &lt;- paste(“Type IIS standard”, c(“Promoter”, “RBS”, “CDS”, “terminator”), “template”) df_t &lt;- data.frame(templates, t_names) knitr::kable(df_t, “simple”, caption = “Template”) Parts &lt;- paste(’BBa_K335200’,0:9,seq=’‘) names &lt;- c(’His-Tag / GS linker / SplintR Ligase’, ‘His-Tag / GS linker / Φ29 DNA polymerase’, ‘Extended RBS’, ‘T7 terminator’, ‘Strong Promoter / Strong RBS / BBa_K3352000 / Double Terminator’, ‘Strong Promoter / Strong RBS / BBa_K3352001 / Double Terminator’, ‘T7 Promoter / Strong RBS / BBa_K3352000 / Double Terminator’, ‘T7 Promoter / Strong RBS / BBa_K3352001 / Double Terminator’, ‘pET 3a T7 Promoter UTR / Extended RBS / BBa_K3352000 / T7 Terminator’, ‘pET 11a Promoter UTR / Extended RBS / BBa_K3352001 / T7 Terminator’) df_P &lt;- data.frame(Parts,names) knitr::kable(df_P, “simple”, caption = “Part Module”) backborns &lt;- sprintf(“BBa_K3482%02d”,1:16) backborns backborns &lt;- sprintf(“BBa_K34820%02d”, c(0,1,5:13,22)) backborns type &lt;- c(‘Regulatory’*3) rep(‘Regulatory’,3) rep(‘Regulatory’,2,‘A’,3) rep(‘Regulatory’,2) parts &lt;- sprintf(“BBa_K34820%02d”, c(4,14:18,20,30:38,40:44)) ls</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

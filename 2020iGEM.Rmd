@@ -1,0 +1,150 @@
+---
+title: "iGEM2021"
+date: "2021-03-18"
+output: 
+  html_document:
+  pdf_document:
+    latex_engine: xelatex
+mainfont : NanumGothic
+---
+
+# Team: UofUppsala
+## Subject : NanoFlex
+* Description
+`Biosensor의 Regulator를 Antiboy Variable region으로 대체하여 외부 물질을 감지한 후 Cell내부 Epitope를 외부로 표지하여 결합 후 Marker를 발현 하게함`
+* Wiki : [Team:UofUppsala](https://2020.igem.org/Team:UofUppsala/)
+* Tag : `Biosensor`
+* Part : [UofUppsala:Parts](https://2020.igem.org/Team:UofUppsala/Parts)
+
+
+df2 = data.frame(df, ncol = 2)
+df2
+paste('BBa_K34250', 01:12)
+paste('BBa_K34250', 01:12, sep='')
+paste('BBa_K342500', 01:12, sep='')
+paste('BBa_K342500', 1:9, sep='')
+paste('BBa_K342500', 1:9, sep='') + BBa_K3425010
+paste('BBa_K342500', 1:9, sep='')
+1:16
+sprintf("%05d",1:16)
+sprintf("BBa_K3425%02d",1:16)
+sprintf("BBa_K34250%02d",1:16)
+backborns = sprintf("BBa_K34250%02d",1:16)
+names <- paste('pSB3C', 11:14, sep='')
+names
+names <- c(paste('pSB3C', 11:14, sep=''),(paste('pSB3K0',1:4,sep=''))
+names
+names <- c(paste('pSB3C', 11:14, sep=''),(paste('pSB3K0',1:4,sep=''))
+names <- c(paste('pSB3C', 11:14, sep=''),(paste('pSB3K0',1:4,sep=''))
+names <- paste('pSB3C', 11:14, sep='')
+names
+paste('pSB3K0',1:4,sep)
+paste('pSB3K0', 1:4,sep='')
+names <- c(paste('pSB3C', 11:14, sep=''),
+paste('pSB3K0', 1:4,sep=''),
+paste('pSB4K0', 1:4,sep=''),
+paste('pSB4A0', 1:4,sep=''),
+)
+names <- c(paste('pSB3C', 11:14, sep=''),
+paste('pSB3K0', 1:4,sep=''),
+paste('pSB4K0', 1:4,sep=''),
+paste('pSB4A0', 1:4,sep=''),
+)
+names <- c(paste('pSB3C', 11:14, sep=''),
+paste('pSB3K0', 1:4,sep=''),
+paste('pSB4K0', 1:4,sep=''),
+paste('pSB4A0', 1:4,sep='')
+)
+names
+kable(c(backborns, names))
+library(knitr)
+kable(c(backborns, names))
+data.frame(c(backborns, names))
+data.frame(backborns, names)
+kable(backborns, names)
+data.frame(backborns, names)
+df <- data.frame(backborns, names)
+kable(df)
+knitr::kable(df, "pipe")
+knitr::kable(df, "simple")
+?kable
+t_names <- paste('Type IIS standard', c('Promoter, RBS, CDS, terminator), 'template'	)
+t_names <- paste('Type IIS standard', c('Promoter, RBS, CDS, terminator))
+t_names
+t_names
+t_names <- paste('Type IIS standard', c('Promoter, RBS, CDS, terminator))
+t_names <- paste('Type IIS standard', c('Promoter, RBS, CDS, terminator))
+t_names
+paste('A',1:5)
+paste("A",1:5)
+t_names <- paste("Type IIS standard", c("Promoter", "RBS", "CDS", "terminator"))
+t_names <- paste("Type IIS standard", c("Promoter", "RBS", "CDS", "terminator"), "template")
+t_names
+df_t <- data.frame(templates, t_names)
+Parts <- paste('BBa_K335200',0:9,seq='')
+df_P <- data.frame(Parts,names)
+df <- data.frame(Parts, names, tag, description, len)
+Parts <- c('BBa_K3669003','BBa_K3669004','BBa_K3669005','BBa_K3669006','BBa_K3669007','BBa_K3669008','BBa_K3669009','BBa_K3669010','BBa_K3669011','BBa_K3669012','BBa_K3669013','BBa_K3669014')
+names <- c('gpdA3B box','amdS selectable marker','Pcox4 promoter','Pmin minimal gpdA promoter','TcgrA Terminator','tetO7 binding site operator','ToxA Promoter','TtrpC Terminator','trpC Promoter','sGFP','Nos Terminator','HygR selectable marker')
+tag <- c('Regulatory','CDS','Regulatory','Regulatory','Terminator','Regulatory','Regulatory','Terminator','Regulatory','Reporter','Terminator','CDS')
+description <- c('gpdA3B contains three copies of the gpdA box, which was discovered that when removed transcription was significantly decreased. Therefore there is strong evidence that it is the minimal promoter. Three copies of the gpdA box gave the highest levels of transcription, much higher than the original single copy.','amdS is a dominant selective gene marker. Gene allows organism to use acetamide as a carbon/nitrogen source for resource acquisition. Can be used in conjunction with acetamide selective media.','Pcox4 constitutive promoter is comparable to gpdA in strength, good option for high expression.','This DNA sequence encodes the 175 bp minimal gpdA promoter from Aspergillus nidulans.','Terminator on plasmid p502. Can be used as a terminator gene in Aspergillus.','Seven copies of tetO with spacers in between. Binds tTA to induce expression of some promoter. Used as a binding site of tTA regulated by the amount of doxycycline in the system.','ToxA is a strong constitutive promoter, used to drive expression of a reporter gene.','Transcription terminator used to stop selective gene markers.','trpC promoter used to drive selectable marker gene resistance.','Variant of GFP, where a serine at position 65 is replaced with threonine. sGFP is a stronger reporter gene than normal GFP in filamentous fungi leading to greater fluorescence.','Nos Terminator used to stop transcription of reporter gene sGFP.','Confers resistance to the antibiotic hygromycin. Used for selectable markers in selectable media.','For selecting plasmids, one can use this gene in the presence of hygromycin.')
+len <- c('171bp','1647bp','1500bp','175bp','278bp','271bp','265bp','763bp','351bp','720bp','253bp','1026bp')
+df <- data.frame(Parts, names, tag, description, len)
+Parts <- c('BBa_K3669003','BBa_K3669004','BBa_K3669005','BBa_K3669006','BBa_K3669007','BBa_K3669008','BBa_K3669009','BBa_K3669010','BBa_K3669011','BBa_K3669012','BBa_K3669013','BBa_K3669014')
+names <- c('gpdA3B box','amdS selectable marker','Pcox4 promoter','Pmin minimal gpdA promoter','TcgrA Terminator','tetO7 binding site operator','ToxA Promoter','TtrpC Terminator','trpC Promoter','sGFP','Nos Terminator','HygR selectable marker')
+tag <- c('Regulatory','CDS','Regulatory','Regulatory','Terminator','Regulatory','Regulatory','Terminator','Regulatory','Reporter','Terminator','CDS')
+description <- c('gpdA3B contains three copies of the gpdA box, which was discovered that when removed transcription was significantly decreased. Therefore there is strong evidence that it is the minimal promoter. Three copies of the gpdA box gave the highest levels of transcription, much higher than the original single copy.','amdS is a dominant selective gene marker. Gene allows organism to use acetamide as a carbon/nitrogen source for resource acquisition. Can be used in conjunction with acetamide selective media.','Pcox4 constitutive promoter is comparable to gpdA in strength, good option for high expression.','This DNA sequence encodes the 175 bp minimal gpdA promoter from Aspergillus nidulans.','Terminator on plasmid p502. Can be used as a terminator gene in Aspergillus.','Seven copies of tetO with spacers in between. Binds tTA to induce expression of some promoter. Used as a binding site of tTA regulated by the amount of doxycycline in the system.','ToxA is a strong constitutive promoter, used to drive expression of a reporter gene.','Transcription terminator used to stop selective gene markers.','trpC promoter used to drive selectable marker gene resistance.','Variant of GFP, where a serine at position 65 is replaced with threonine. sGFP is a stronger reporter gene than normal GFP in filamentous fungi leading to greater fluorescence.','Nos Terminator used to stop transcription of reporter gene sGFP.','Confers resistance to the antibiotic hygromycin. Used for selectable markers in selectable media.','For selecting plasmids, one can use this gene in the presence of hygromycin.')
+len <- c('171bp','1647bp','1500bp','175bp','278bp','271bp','265bp','763bp','351bp','720bp','253bp','1026bp')
+df <- data.frame(Parts, names, tag, description, len)
+len(Parts)
+length(Parts)
+length(names)
+length(tag)
+length(len)
+length(description)
+print (description)
+Parts <- c('BBa_K3669003','BBa_K3669004','BBa_K3669005','BBa_K3669006','BBa_K3669007','BBa_K3669008','BBa_K3669009','BBa_K3669010','BBa_K3669011','BBa_K3669012','BBa_K3669013','BBa_K3669014')
+names <- c('gpdA3B box','amdS selectable marker','Pcox4 promoter','Pmin minimal gpdA promoter','TcgrA Terminator','tetO7 binding site operator','ToxA Promoter','TtrpC Terminator','trpC Promoter','sGFP','Nos Terminator','HygR selectable marker')
+tag <- c('Regulatory','CDS','Regulatory','Regulatory','Terminator','Regulatory','Regulatory','Terminator','Regulatory','Reporter','Terminator','CDS')
+description <- c('gpdA3B contains three copies of the gpdA box, which was discovered that when removed transcription was significantly decreased. Therefore there is strong evidence that it is the minimal promoter. Three copies of the gpdA box gave the highest levels of transcription, much higher than the original single copy.','amdS is a dominant selective gene marker. Gene allows organism to use acetamide as a carbon/nitrogen source for resource acquisition. Can be used in conjunction with acetamide selective media.','Pcox4 constitutive promoter is comparable to gpdA in strength, good option for high expression.','This DNA sequence encodes the 175 bp minimal gpdA promoter from Aspergillus nidulans.','Terminator on plasmid p502. Can be used as a terminator gene in Aspergillus.','Seven copies of tetO with spacers in between. Binds tTA to induce expression of some promoter. Used as a binding site of tTA regulated by the amount of doxycycline in the system.','ToxA is a strong constitutive promoter, used to drive expression of a reporter gene.','Transcription terminator used to stop selective gene markers.','trpC promoter used to drive selectable marker gene resistance.','Variant of GFP, where a serine at position 65 is replaced with threonine. sGFP is a stronger reporter gene than normal GFP in filamentous fungi leading to greater fluorescence.','Nos Terminator used to stop transcription of reporter gene sGFP.','Confers resistance to the antibiotic hygromycin. Used for selectable markers in selectable media. For selecting plasmids, one can use this gene in the presence of hygromycin.')
+len <- c('171bp','1647bp','1500bp','175bp','278bp','271bp','265bp','763bp','351bp','720bp','253bp','1026bp')
+df <- data.frame(Parts, names, tag, description, len)
+knitr::kable(df_P, "simple", caption = "Part List")
+df <- data.frame(Parts, names, tag, description, len)
+knitr::kable(df, "simple", caption = "Part List")
+library(knitr)
+backborns <- sprintf("BBa_K34250%02d",1:16)
+v_names <- c(paste('pSB3C', 11:14, sep=''),
+paste('pSB3K0', 1:4,sep=''),
+paste('pSB4K0', 1:4,sep=''),
+paste('pSB4A0', 1:4,sep='')
+)
+df_v <- data.frame(backborns, v_names)
+knitr::kable(df_v, "simple", caption = 'Vector')
+templates <- paste('BBa_K34250',17:20, sep='')
+t_names <- paste("Type IIS standard", c("Promoter", "RBS", "CDS", "terminator"), "template")
+df_t <- data.frame(templates, t_names)
+knitr::kable(df_t, "simple", caption = "Template")
+Parts <- paste('BBa_K335200',0:9,seq='')
+names <- c('His-Tag / GS linker / SplintR Ligase',
+'His-Tag / GS linker / Φ29 DNA polymerase',
+'Extended RBS',
+'T7 terminator',
+'Strong Promoter / Strong RBS / BBa_K3352000 / Double Terminator',
+'Strong Promoter / Strong RBS / BBa_K3352001 / Double Terminator',
+'T7 Promoter / Strong RBS / BBa_K3352000 / Double Terminator',
+'T7 Promoter / Strong RBS / BBa_K3352001 / Double Terminator',
+'pET 3a T7 Promoter UTR / Extended RBS / BBa_K3352000 / T7 Terminator',
+'pET 11a Promoter UTR / Extended RBS / BBa_K3352001 / T7 Terminator')
+df_P <- data.frame(Parts,names)
+knitr::kable(df_P, "simple", caption = "Part Module")
+backborns <- sprintf("BBa_K3482%02d",1:16)
+backborns
+backborns <- sprintf("BBa_K34820%02d", c(0,1,5:13,22))
+backborns
+type <- c('Regulatory'*3)
+rep('Regulatory',3)
+rep('Regulatory',2,'A',3)
+rep('Regulatory',2)
+parts <- sprintf("BBa_K34820%02d", c(4,14:18,20,30:38,40:44))
+ls

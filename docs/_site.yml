@@ -7,3 +7,4 @@ navbar:
     - text: "About"
       href: about.html
     - text: "TEST"
+      href: igem_part.html
